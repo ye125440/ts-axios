@@ -38,14 +38,12 @@ router.get('/base/get', function(req, res) {
 })
 
 router.post('/base/post', function(req, res) {
-  console.log('debug ~ file: server.js ~ line 41 ~ router.post ~ req.body', req.body);
   res.json(req.body)
 })
 
 router.post('/base/buffer', function(req, res) {
   let msg = []
   req.on('data', (chunk) => {
-    console.log('debug ~ file: server.js ~ line 48 ~ req.on ~ chunk', chunk);
     if (chunk) {
       msg.push(chunk)
     }
