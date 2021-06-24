@@ -73,6 +73,10 @@ router.get('/error/timeout', function(req, res) {
   }, 3000)
 })
 
+router.get('/extend/user', function(req, res) {
+  res.json({ code: 0, result: { name: 'avu', age: 29 }, message: 'success' })
+})
+
 app.use(router)
 
 const port = process.env.PORT || 8081
